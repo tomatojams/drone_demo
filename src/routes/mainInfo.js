@@ -85,7 +85,7 @@ export default function MainInfo() {
       prev.includes(droneId) ? prev.filter((id) => id !== droneId) : [...prev, droneId]
     );
   };
-  console.log(sensorMark);
+  // console.log(sensorMark);
   return (
     <MainContainer>
       <AppHeader />

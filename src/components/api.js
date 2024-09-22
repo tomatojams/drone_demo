@@ -137,6 +137,10 @@ const fetchSelectedDroneData = async (droneId) => {
   }
 };
 
+// 서버로 드론 제어 명령을 전송하는 함수
+const sendControlCommand = async (droneId, enumType, isActive) => {
+  console.log(droneId, enumType, isActive);
+};
 // 가상 센서 좌표 데이터를 생성하는 함수
 const fetchMarkData = async () => {
   try {
@@ -202,4 +206,5 @@ export {
   fetchSensorList,
   deleteDroneList,
   deleteSensor,
+  sendControlCommand,
 };

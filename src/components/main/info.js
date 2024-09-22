@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
-// import axios from "axios";
 
+import { sendControlCommand } from "../api";
 // Card 스타일
 const Card = styled.div`
   width: 350px;
@@ -121,21 +121,6 @@ export default function InfoDrone({ selectedDroneData }) {
         [stateKey]: !prevState[droneId]?.[stateKey],
       },
     }));
-  };
-
-  // 서버로 드론 제어 명령을 전송하는 함수
-  const sendControlCommand = async (droneId, enumType, isActive) => {
-    try {
-      // const command = isActive ? "stop" : "start";
-      // const response = await axios.post("/api/drone/control", {
-      //   droneId: droneId,
-      //   enum: enumType,
-      //   command: command,
-      // });
-      console.log(droneId, enumType, isActive);
-    } catch (error) {
-      console.error("Error sending command:", error);
-    }
   };
 
   return (
