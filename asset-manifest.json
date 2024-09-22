@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/drone_demo/static/css/main.2407cd04.css",
-    "main.js": "/drone_demo/static/js/main.e81579fb.js",
+    "main.js": "/drone_demo/static/js/main.bcad2ea4.js",
     "index.html": "/drone_demo/index.html",
     "main.2407cd04.css.map": "/drone_demo/static/css/main.2407cd04.css.map",
-    "main.e81579fb.js.map": "/drone_demo/static/js/main.e81579fb.js.map"
+    "main.bcad2ea4.js.map": "/drone_demo/static/js/main.bcad2ea4.js.map"
   },
   "entrypoints": [
     "static/css/main.2407cd04.css",
-    "static/js/main.e81579fb.js"
+    "static/js/main.bcad2ea4.js"
   ]
 }
