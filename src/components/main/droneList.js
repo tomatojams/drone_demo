@@ -7,7 +7,7 @@ import styled from "styled-components";
 const DroneCardListWrapper = styled.div`
   height: 95%;
 
-  max-height: calc(100vh - 594px);
+  max-height: calc(100vh - 596px);
 
   display: flex;
   margin-left: 12px;
