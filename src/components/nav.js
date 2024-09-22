@@ -142,6 +142,7 @@ const DropdownItem = styled.div`
   height: 200px;
   z-index: 1000;
   display: flex;
+
   flex-direction: column;
   justify-content: space-between;
   border-radius: 10px;
@@ -158,6 +159,7 @@ const Logout = styled.div`
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   background-color: #f5f5f5;
+  text-shadow: -1px -1px 2px #fefefe;
   &:hover {
     background-color: #f5f5f5;
   }
