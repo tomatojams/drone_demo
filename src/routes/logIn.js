@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
+const publicUrl = process.env.PUBLIC_URL;
 // Wrapper 스타일드 컴포넌트
 const Wrapper = styled.div`
   display: flex;
@@ -9,7 +10,8 @@ const Wrapper = styled.div`
   height: 100vh;
   background-color: #ddd;
   padding: 0 50px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/back.webp");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("${publicUrl}/back.webp");
   background-size: cover;
   background-position: center;
 `;
@@ -42,7 +44,7 @@ const LoginBox = styled.div`
   justify-content: center;
   align-items: center;
   width: 500px;
-  padding: 30px;
+  padding: 60px 40px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -52,7 +54,7 @@ const Logo = styled.div`
   margin-bottom: 20px;
   width: 100px;
   height: 100px;
-  background-image: url("/logo.svg");
+  background-image: url("${publicUrl}/logo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -65,7 +67,7 @@ const SNT = styled.div`
   width: 150px;
   height: 80px;
   z-index: 100;
-  background-image: url("/whitelogo.svg");
+  background-image: url("${publicUrl}/whitelogo.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -108,7 +110,7 @@ export default function LogIn() {
       <SNT />
       <Title>
         <BigTitle>All about embedded device security and digital forensics</BigTitle>
-        <SmallTitle>기능데모로 보안상 일부기능은 지원하지 않습니다.</SmallTitle>
+        <SmallTitle>기술데모로 보안상 일부기능은 지원하지 않습니다.</SmallTitle>
       </Title>
       <LoginBox>
         <Logo />

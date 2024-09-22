@@ -18,6 +18,20 @@ const Title = styled.h2`
   color: #0e43b9;
 `;
 
+const Demo = styled.h2`
+  width: 100%;
+  background-color: #f1f5f9;
+  padding: 8px 20px;
+  margin: 0;
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Satoshi", sans-serif;
+  letter-spacing: 0.36em;
+  color: #0e43b9;
+`;
+
 const Header = styled.header`
   display: flex;
   justify-content: space-between;
@@ -231,6 +245,7 @@ export default function AppHeader() {
               <MenuSpan>Setting</MenuSpan>
             </NavItem>
           </Link>
+          <Demo>기술데모</Demo>
         </Nav>
         <Nav>
           <TimeDisplay>{currentTime.toLocaleTimeString()}</TimeDisplay>

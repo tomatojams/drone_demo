@@ -17,7 +17,7 @@ const Card = styled.div`
   background-color: white;
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
   position: relative;
-  padding-bottom: 20px;
+  padding-bottom: 15px;
 `;
 
 // const Row = styled.div`

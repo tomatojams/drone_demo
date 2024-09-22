@@ -22,6 +22,19 @@ const generateMockDronePosition = (droneId, name, latitude, longitude) => {
   };
 };
 
+// 초기 드론 위치 데이터를 저장하는 객체
+let initialDronePositions = [];
+// 초기화하는 함수
+const resetDronePositions = () => {
+  initialDronePositions = [
+    generateMockDronePosition("64:60:1f:7a:b0:5e", "Mavic Air", 37.568, 126.978),
+    generateMockDronePosition("12:34:56:78:9a:bc", "Phantom 4", 37.5667, 126.9782),
+    generateMockDronePosition("a1:b2:c3:d4:e5:f6", "Inspire 2", 37.5665, 126.9767),
+    generateMockDronePosition("11:22:33:44:55:66", "Mavic Mini", 37.5669, 126.98),
+    generateMockDronePosition("a7:b8:c9:d0:e1:f2", "DJI Spark", 37.5655, 126.977),
+    // generateMockDronePosition("b3:c4:d5:e6:f7:g8", "DJI Matrice", 37.5671, 126.979),
+  ];
+};
 // 가상 센서 좌표 데이터를 생성하는 함수 (단일 좌표)
 const generateMockSensorPosition = () => {
   const now = new Date();
@@ -48,16 +61,20 @@ const generateMockSensorListData = (sensorId, latitude, longitude) => {
 };
 
 // 드론 위치 데이터를 가상으로 생성하는 함수
+
 const fetchDronePositions = async () => {
   try {
-    const mockData = [
-      generateMockDronePosition("64:60:1f:7a:b0:5e", "Mavic Air", 37.5665, 126.978),
-      generateMockDronePosition("12:34:56:78:9a:bc", "Phantom 4", 37.5667, 126.9782),
-      generateMockDronePosition("a1:b2:c3:d4:e5:f6", "Inspire 2", 37.5668, 126.9784),
-      generateMockDronePosition("11:22:33:44:55:66", "Mavic Mini", 37.5669, 126.9786),
-      generateMockDronePosition("a7:b8:c9:d0:e1:f2", "DJI Spark", 37.567, 126.9788),
-      generateMockDronePosition("b3:c4:d5:e6:f7:g8", "DJI Matrice", 37.5671, 126.979),
-    ];
+    // 현재 드론 위치에서 이동 값을 더해서 반환
+    const mockData = initialDronePositions.map((drone) => ({
+      ...drone,
+      latitude: drone.latitude + (Math.random() - 0.5) * 0.0002,
+      longitude: drone.longitude + (Math.random() - 0.5) * 0.0002,
+      location: {
+        ...drone.location,
+        latitude: drone.latitude + (Math.random() - 0.5) * 0.0002,
+        longitude: drone.longitude + (Math.random() - 0.5) * 0.0002,
+      },
+    }));
 
     return mockData.sort((a, b) => a.droneId.localeCompare(b.droneId));
   } catch (error) {
@@ -65,6 +82,16 @@ const fetchDronePositions = async () => {
     throw error;
   }
 };
+
+// 5분(300초)마다 초기 드론 위치로 리셋하는 타이머 설정
+setInterval(() => {
+  console.log("Resetting drone positions to initial state...");
+  resetDronePositions();
+}, 300000); // 300,000 밀리초 = 5분
+
+// 초기 드론 위치를 리셋 (프로그램 시작 시)
+resetDronePositions();
+
 // 개별 드론 정보 가져오기 함수 (위치 변동 반영)
 const fetchSelectedDroneData = async (droneId) => {
   try {

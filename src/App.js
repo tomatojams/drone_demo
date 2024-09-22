@@ -5,7 +5,7 @@ import Setting from "./routes/setting";
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/drone_demo">
       <Routes>
         <Route path="/" element={<MainInfo />} />
         <Route path="/login" element={<LogIn />} />
