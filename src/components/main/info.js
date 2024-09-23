@@ -17,7 +17,7 @@ const Card = styled.div`
   box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
   position: relative;
   padding-top: 100px;
-  padding-bottom: 20px;
+  padding-bottom: 19px;
   color: #555555;
 `;
 
@@ -59,7 +59,7 @@ const DroneInfo = styled.div`
   top: 60px;
   left: 180px;
   display: flex;
-  gap: 10px;
+  gap: 8px;
   flex-direction: column;
 `;
 
@@ -67,7 +67,7 @@ const DroneInfo = styled.div`
 const DroneDetail = styled.div`
   width: 100%;
   margin-top: 70px;
-  padding: 10px;
+  padding: 8px;
   padding-left: 30px;
   gap: 65px;
   display: flex;
@@ -86,7 +86,7 @@ const ButtonGroup = styled.div`
   display: flex;
   justify-content: space-around;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 5px;
   padding: 0 15px;
 `;
 const SmallSpan = styled.span`
@@ -105,7 +105,7 @@ const ToggleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100px;
+  width: 90px;
 `;
 
 export default function InfoDrone({ selectedDroneData }) {
