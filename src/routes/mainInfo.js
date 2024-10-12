@@ -42,7 +42,7 @@ export default function MainInfo() {
   const [filteredDrons, setFilteredDrons] = useState([]);
   const [customMarkers, setCustomMarkers] = useState([]);
   const [droneCount, setDroneCount] = useState(0);
-  const [radius, setRadius] = useState(100); // 반경 상태 추가
+  const [radius, setRadius] = useState(148); // 반경 상태 추가
 
   // 1초마다 드론 위치 업데이트
   const { data: latestPositions = [] } = useQuery(["dronePositions"], fetchDronePositions, {
@@ -85,7 +85,7 @@ export default function MainInfo() {
       prev.includes(droneId) ? prev.filter((id) => id !== droneId) : [...prev, droneId]
     );
   };
-  // console.log(sensorMark);
+  console.log(selectedDroneId);
   return (
     <MainContainer>
       <AppHeader />
