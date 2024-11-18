@@ -233,7 +233,7 @@ export default function AppHeader() {
       )}
       <Header>
         <Nav>
-          <Logo src={`${process.env.PUBLIC_URL}/logo_hori.svg`} alt="Logo" />
+          <Logo src={`${process.env.PUBLIC_URL}/logo_hori2.svg`} alt="Logo" />
           <Link to="/" style={{ textDecoration: "none", color: "#414040" }}>
             <NavItem>
               {matchMonitor ? <NavBox layoutId="box" /> : null}
